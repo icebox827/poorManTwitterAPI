@@ -21,7 +21,9 @@ class tweetList(APIView) :
 
     def post(self, request, format=None):
         parser_classes = (parsers.JSONParser)
-        content = request.data["content"]
-        name = request.data["name"]
-        return Response()
+        content = tweet.objects.values("content")
+        name = tweet.objects.values("name")
+        serializer = tweetSerializer(data=request.data)
+        if serializer.is_valid():
+            return Response(serializer.data)
         
