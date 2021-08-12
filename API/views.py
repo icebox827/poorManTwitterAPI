@@ -3,6 +3,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from rest_framework.serializers import Serializer
+from rest_framework.parsers import JSONParser
+from rest_framework import parsers
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -17,8 +19,11 @@ class tweetList(APIView) :
         serializer=tweetSerializer(tweet1, many=True)
         return Response(serializer.data)
 
-    def post(self):
-        pass
+    def post(self, request, format=None):
+        parser_classes = (parsers.JSONParser,)
+        content = request.data["content"]
+        name = request.data["name"]
+        
         # parser.add_argument("name")
         # parser.add_argument("content")
         # args = parser.parse_args
