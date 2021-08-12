@@ -19,3 +19,13 @@ class tweetList(APIView) :
 
     def post(self):
         pass
+        # parser.add_argument("name")
+        # parser.add_argument("content")
+        # args = parser.parse_args
+        # tweet_id = int(max(tweet.keys())) + 1
+        # tweet_id = '%i' % tweet_id
+        # tweet[tweet_id] = {
+        #     "name": args["name"],
+        #     "content": arg["content"]
+        # }
+        # return tweet[tweet_id], 201
