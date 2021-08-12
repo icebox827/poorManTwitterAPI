@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from . models import tweet
 
-class tweetSerializer(Serializers.ModelSerializer):
+class tweetSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = tweet

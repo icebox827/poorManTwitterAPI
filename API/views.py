@@ -13,9 +13,9 @@ from . serializers import tweetSerializer
 class tweetList(APIView) :
 
     def get(self, request):
-    tweet1= tweet.objects.all()
-    serializer=tweetSerializer(tweet1, many=True)
-    return Response(serializer.data)
+        tweet1 = tweet.objects.all()
+        serializer=tweetSerializer(tweet1, many=True)
+        return Response(serializer.data)
 
     def post(self):
         pass

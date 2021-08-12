@@ -20,5 +20,5 @@ from API import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('tweet/', views.tweetList.as_views()),
+    path('tweet/', views.tweetList.as_view()),
 ]
